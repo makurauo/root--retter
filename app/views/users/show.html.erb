@@ -1,5 +1,11 @@
-<div class="contents row">
-<p>name:<%= @user.nick_name %></p>
+<p>name:<%= @nickname %></p>
 
-  <p><%= @user.nick_name %>さんの投稿一覧</p>
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+
+  <% @artists.each do |f| %>
+      <p><%= f.name %>先生</p>
+      <p>・<%= f.explanation %></p>
+    </div>
+  <% end %>
 </div>

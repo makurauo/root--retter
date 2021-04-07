@@ -5,6 +5,7 @@ before_action :move_to_index, except: [:index, :show]
 def index
   @user = User.order("created_at DESC")
   @artists = Artist.all
+  @artists = Artist.includes(:user)
 end
 
 def new

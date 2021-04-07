@@ -13,6 +13,9 @@
    </div>
      <span class="name">
        <%= artist.name %><%= "先生" %>
+         <a href="/users/<%= artist.user.id %>">
+          <span>投稿者</span><%= artist.user.nick_name %>
+        </a>
     </span>
     <p><%= artist.explanation %></p>
   <% end %>

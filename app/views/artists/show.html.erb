@@ -11,6 +11,11 @@
    </div>
      <span class="name">
        <%= @artist.name %><%= "先生" %>
+         <span class="name">
+      <a href="/users/<%= @artist.user.id %>">
+        <span>投稿者</span><%= @artist.user.nick_name %>
+      </a>
+    </span>
     </span>
     <p><%= @artist.explanation %></p>
 </div>
