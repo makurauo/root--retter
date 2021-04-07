@@ -7,7 +7,7 @@
 | encrypted_password | string  | null: false               |
 | nick_name          | string  | null: false               |
 | genre_id           | integer | null: false               |
-| self_info          | string  |                           |
+| profile            | text    |                           |
 
 ### Association
 - has_many :artists
