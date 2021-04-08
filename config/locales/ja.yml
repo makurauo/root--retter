@@ -1,0 +1,9 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nick_name: ニックネーム
+       genre_id: ジャンル
+     artist:
+       name: 先生の名前
+       explanation: 先生への気持ち
