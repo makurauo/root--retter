@@ -14,6 +14,7 @@
         <% end %>
         </ul>
    </div>
+    <div><%= artist.created_at.to_s(:datetime_jp) %></div>
      <span class="name">
        <%= artist.name %><%= "先生" %>
          <a href="/users/<%= artist.user.id %>">

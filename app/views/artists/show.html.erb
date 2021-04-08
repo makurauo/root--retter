@@ -35,6 +35,7 @@
           <h4>＜コメント一覧＞</h4>
            <% @artist.comments.each do |comment| %>
              <li class="comments_list">
+                <div><%= comment.created_at.to_s(:datetime_jp) %></div>
                 <strong><%= link_to comment.user.nick_name, user_path(comment.user.id), class: :comment_user %> <strong>
                 <%= comment.text %>
             </li>
