@@ -25,10 +25,11 @@
 - belongs_to :user
 
 ## commentsテーブル
-| Column   | Type       | Options            |
-| ---------| ---------- | ------------------ |
-| text     | text       | null: false        |
-| user_id  | references | foreign_key: true  |
+| Column   | Type    | Options        |
+| ---------| ------- | -------------- |
+| text     | text    | null: false    |
+| user_id  | integer | null: false    |
+| user_id  | integer | null: false    |
 
 ### Association
 - belongs_to :user
