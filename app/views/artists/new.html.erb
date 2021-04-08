@@ -1,12 +1,6 @@
 <div class="contents row">
   <div class="container">
     <h3>投稿する</h3>
-    <%= form_with(model: @artist, local: true) do |f| %>
-      <%= f.text_field :name, placeholder: "先生の名前" %> <%= "先生" %>
-      <%= f.text_area  :explanation, placeholder: "思いの丈を綴ってください。", rows: "8" %>
-      <%= f.submit "投函する" %>
-      <%=link_to 'もどる', root_path %>
-      <%# @artist.user.nick_name %>
-    <% end %>
+ <%= render partial: "form", locals: { artist: @artist } %>
   </div>
 </div>

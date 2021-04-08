@@ -1,0 +1,29 @@
+ <h2 class="page-heading">
+        <%= @user.nick_name%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">名前</th>
+            <td class="table__col2"><%= @user.nick_name %></td>
+          </tr>
+          <tr>
+          <% if @user.profile != nil %>
+           <% puts %>
+            <th class="table__col1">プロフィール</th>
+            <td class="table__col2"><%= @user.profile %></td>  
+           <% end %>
+          </tr>
+          <tr>
+            <th class="table__col1">好きなジャンル</th>
+            <td class="table__col2"><%= @user.genre.name %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= "#{@user.nick_name}さんの投稿"%>
+      </h2>
+      <div class="user__card">
+       <%= render partial: "artists/artist",  collection: @artists %>
+      </div>
+    </div>

@@ -1,5 +1,6 @@
 <div class="contents row">
    <div class="content_post" style="background-image: 'kuro.jpg';">
+     <% if user_signed_in? && current_user.id == @artist.user_id %>
        <div class="more">
          <span><%= image_tag 'arrow_top.png' %></span>
         <ul class="more_list">
@@ -8,9 +9,16 @@
              <%= link_to '削除', artist_path(@artist.id), method: :delete, data: { confirm: '削除しますか？' }%>
            </li>
         </ul>
-   </div>
+      </div>    
+   <% end %>
      <span class="name">
        <%= @artist.name %><%= "先生" %>
+         <span class="name">
+      <a href="/users/<%= @artist.user.id %>">
+        <span>投稿者</span><%= @artist.user.nick_name %>
+      </a>
+    </span>
     </span>
     <p><%= @artist.explanation %></p>
+  </div>   
 </div>
