@@ -20,5 +20,27 @@
     </span>
     </span>
     <p><%= @artist.explanation %></p>
+  </div>
+   <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@artist, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "4" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※ コメントの投稿には新規登録/ログインが必要です </p></strong>
+    <% end %>
+       <ul class="comments_lists">
+        <div class="comments">
+          <h4>＜コメント一覧＞</h4>
+           <% @artist.comments.each do |comment| %>
+             <li class="comments_list">
+                <strong><%= link_to comment.user.nick_name, user_path(comment.user.id), class: :comment_user %> <strong>
+                <%= comment.text %>
+            </li>
+          <% end %>  
+        </div>
+       </ul>
+    </div>
   </div>   
 </div>
