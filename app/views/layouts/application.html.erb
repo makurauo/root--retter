@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html>
+
   <head>
    <meta charset="UTF-8">
-  <link rel="stylesheet" href="example.css">
-    <title>RootLetter</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-  <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="example.css">
+      <title>RootLetter</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <header>
-    <h1 class="headline">
-      <a class="tittle">Root Letter</a>
-    </h1>
-    <% if user_signed_in? %>
-    <ul class="nav-list">
-      <li class="nav-list-item">
-         <%= link_to current_user.nick_name, "/users/#{current_user.id}" %>
+    <header>
+      <h1 class="headline">
+        <a class="tittle">Root Letter</a>
+      </h1>
+      <% if user_signed_in? %>
+       <ul class="nav-list">
+        <li class="nav-list-item">
+          <%= link_to current_user.nick_name, "/users/#{current_user.id}" %>
           <%#<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-      <li class="nav-list-item">
-        <%= link_to "投稿する", new_artist_path, class: "post" %>
-      </li>
+        </li>
+        <li class="nav-list-item">
+          <%= link_to "投稿する", new_artist_path, class: "post" %>
+        </li>
       <% else %>
-      <li class="nav-list-item">
-        <%= link_to "ログイン", new_user_session_path, class: "post" %>
-        <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-      </li>
-     </ul>
-    <% end %>
-  </header>
-</body>
-</html>
+        <li class="nav-list-item">
+          <%= link_to "ログイン", new_user_session_path, class: "post" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+        </li>
+       </ul>
+      <% end %>
+   </header>
     <%= yield %>
-     <footer>
-      <p>
-        Copyright RootLetter 2021.
-      </p>
-    </footer>
+  <footer>
+    <ul class="footer-menu">
+     <li><%= link_to "my page", "/users/#{current_user.id}" %> |</li>
+     <li>about ｜</li>
+     <li>service ｜</li>
+     <li>Contact Us</li>
+    </ul>
+    <p>© All rights reserved by root letter.</p>
+  </footer>
   </body>
 </html>

@@ -46,3 +46,15 @@ a:hover { text-decoration:  none; }
 a:link  { color : #ffffff; }
 a:visited  { color : #ffffff; }
 
+footer{
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  width: 100%;
+  height: 100px;
+  background-image: url("fodder.jpg");
+  color: white;
+  text-align: center;
+}
+ul.footer-menu li {
+display: inline;
+}
