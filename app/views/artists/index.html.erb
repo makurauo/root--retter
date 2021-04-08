@@ -1,22 +1,5 @@
 <div class="contents row">
   <% @artists.each do |artist| %>
-   <div class="content_post" style="background-image: 'kuro.jpg';">
-       <div class="more">
-         <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
-           <li>
-             <%= link_to '詳細', artist_path(artist.id) %>
-             <%= link_to '編集', edit_artist_path(artist.id) %>
-             <%= link_to '削除', artist_path(artist.id), method: :delete, data: { confirm: '削除しますか？' }%>
-           </li>
-        </ul>
-   </div>
-     <span class="name">
-       <%= artist.name %><%= "先生" %>
-         <a href="/users/<%= artist.user.id %>">
-          <span>投稿者</span><%= artist.user.nick_name %>
-        </a>
-    </span>
-    <p><%= artist.explanation %></p>
+   <%= render partial: "artist", locals: { artist: artist } %>
   <% end %>
 </div>

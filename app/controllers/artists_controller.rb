@@ -3,6 +3,7 @@ before_action :set_artist, only: [:edit, :update, :show,:destroy]
 before_action :move_to_index, except: [:index, :show]
 
 def index
+  @artists = Artist.includes(:artist).order("created_at DESC")
   @user = User.order("created_at DESC")
   @artists = Artist.all
   @artists = Artist.includes(:user)
