@@ -1,7 +1,131 @@
-
-* {
-  margin:0; padding:0;
+/*!
+ * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
+ * http://cssreset.com
+ * Copyright 2012 Yahoo! Inc. All rights reserved.
+ * http://yuilibrary.com/license/
+ */
+/*
+    TODO will need to remove settings on HTML since we can't namespace it.
+    TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html{
+  color:#000;
+  background:#FFF;
 }
+/*
+  TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+  TODO test putting a class on HEAD.
+      - Fails on FF.
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin:0;
+  padding:0;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+fieldset,
+img {
+  border:0;
+}
+/*
+  TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style:normal;
+  font-weight:normal;
+}
+
+ol,
+ul {
+  list-style:none;
+}
+
+caption,
+th {
+  text-align:left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size:100%;
+  font-weight:normal;
+}
+q:before,
+q:after {
+  content:'';
+}
+abbr,
+acronym {
+  border:0;
+  font-variant:normal;
+}
+/* to preserve line-height and selector appearance */
+sup {
+  vertical-align:text-top;
+}
+sub {
+  vertical-align:text-bottom;
+}
+input,
+textarea,
+select {
+  font-family:inherit;
+  font-size:inherit;
+  font-weight:inherit;
+}
+/*to enable resizing for IE*/
+input,
+textarea,
+select {
+  *font-size:100%;
+}
+/*because legend doesn't inherit in IE */
+legend {
+  color:#000;
+}
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssreset { display: none; }
+
+
 header {
   width: 100%;
   height: 200px;
@@ -10,6 +134,7 @@ header {
   background-image: url("header.jpg");
   background-position: center center;
   background-size: cover;
+  margin: 0;
 }
 
 header .tittle {
@@ -19,28 +144,26 @@ header .tittle {
   font-size: 50px;
   display: flex;
   display: left;
-  padding: 0 5px;
 }
 
-.nav-list {
-  padding: 8px 10px;
-  font-size: 14px;
-  border: 2px dashed rgb(255, 255, 255);
-  border-radius: 5px;
-  display: inline;
-  position:absolute;
-	left:40px;
-  top:100px;
-}
-
-.nav-list-item {
-  padding: 8px 10px;
-  font-size: 14px;
-  font-weight: bold;
+nav{
   text-align: center;
+  position: absolute; top: 150px;
+  font-family:'Hiragino Mincho ProN';
+  }
+  nav ul{
+  margin: 0 ;
+  padding: 0 ;
+  }
+  nav ul li{
+  list-style: none;
   display: inline-block;
-  
-}
+  width: 18%;
+  min-width: 90px;
+  bottom:20px;
+  }
+
+
 a { text-decoration: none;}
 a:hover { text-decoration:  none; }
 a:link  { color : #ffffff; }
@@ -51,10 +174,29 @@ footer{
   font-size: 20px;
   width: 100%;
   height: 100px;
-  background-image: url("fodder.jpg");
+  background-color: #000000; 
   color: white;
   text-align: center;
 }
 ul.footer-menu li {
 display: inline;
 }
+
+input#search-bar{
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid #00aeff;
+  outline: none;
+  position: 0 auto;
+}
+
+.search-container{
+  width: 490px;
+  display: block;
+  margin: left;
+}
+
+body {background-image: url("fodder.jpg");}

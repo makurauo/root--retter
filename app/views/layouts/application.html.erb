@@ -16,32 +16,32 @@
   <body>
     <header>
       <h1 class="headline">
-        <a class="tittle">Root Letter</a>
+        <a class="tittle">-Root Letter-</a>
       </h1>
-      <% if user_signed_in? %>
-       <ul class="nav-list">
-        <li class="nav-list-item">
-          <%= link_to current_user.nick_name, "/users/#{current_user.id}" %>
+        <nav>
+          <ul>
+            <li class=”current”><a href="/" >Home</a></li>
+            <li></li>
+           <% if user_signed_in? %> 
+            <li> <%= link_to current_user.nick_name, "/users/#{current_user.id}" %></li>
+            <li> <%= link_to "投稿する", new_artist_path, class: "post" %></li>
+           <% else %> 
+            <li><%= link_to "ログイン", new_user_session_path, class: "post" %></li>
+            <li><%= link_to "新規登録", new_user_registration_path, class: "post" %></li>
+           <% end %>
+          </ul>
+        </nav>
           <%#<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-        <li class="nav-list-item">
-          <%= link_to "投稿する", new_artist_path, class: "post" %>
-        </li>
-      <% else %>
-        <li class="nav-list-item">
-          <%= link_to "ログイン", new_user_session_path, class: "post" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-        </li>
-       </ul>
-      <% end %>
-   </header>
+    </header>
     <%= yield %>
   <footer>
     <ul class="footer-menu">
-     <li><%= link_to "my page", "/users/#{current_user.id}" %> |</li>
-     <li>about ｜</li>
-     <li>service ｜</li>
-     <li>Contact Us</li>
+     <li><%= link_to "Home", "/" %></li>
+      <% if user_signed_in? %> 
+     <li>| <%= link_to "My Page", "/users/#{current_user.id}" %> |</li>
+     <li><%= link_to "Post", new_artist_path, class: "post" %> ｜</li>
+     <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% end %>
     </ul>
     <p>© All rights reserved by root letter.</p>
   </footer>
