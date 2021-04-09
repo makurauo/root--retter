@@ -1,3 +1,11 @@
+
+<div class="explain">
+  <h1 class="explain-look">ーあなたの好きな漫画家にファンレターを書いてみませんか？ー</h1>
+  <p  class="explain-text">今までファンレターを書きたいと思ったことはありませんか。 </p>
+  <p  class="explain-text">漫画家への思いを書いてみませんか？ コメントしあって気持ちのこもったお手紙を書きましょう。</p>
+</div>
+
+<p class="sample_h_1">検索欄</p>
 <body>
   <form class="search-container">
     <%= form_with(url: search_artists_path, local: true, method: :get, class: "search-form") do |form| %>
@@ -5,6 +13,9 @@
     <% end %>
   </form>
 </body>
+<p>""</p>
+<p>""</p>
+<p class="sample_h_1">手紙たち</p>
 
 <div class="contents row">
   <% @artists.each do |artist| %>
