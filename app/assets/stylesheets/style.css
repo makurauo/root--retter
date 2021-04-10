@@ -130,7 +130,8 @@ body {
                'ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'
 }
 
- body {background-image: url("fodder.jpg");} 
+ body {background-image: url("fodder.jpg");
+       background-size:  auto;} 
 
   div{
     color: #FFF;
@@ -187,7 +188,7 @@ footer{
   font-size: 20px;
   width: 100%;
   height: 100px;
-  background-color: #000000; 
+  background-color: #000;
   color: white;
   text-align: center;
 }
@@ -214,10 +215,23 @@ display: inline;
 .explain-text{
   font-family:'Hiragino Mincho ProN';
   font-size: 15px;
+  overflow-wrap: break-word;
 }
 
 .search-container{
   text-align: center;
+  position: relative;
+  right: 20px;
+}
+.search-container .search-btn{
+  cursor: pointer;
+  position: absolute;
+  border-style: solid;
+  border-color: #ffffff;
+  background-color: black;
+  margin: 0 0 0 3px;
+  height: 35px;
+  width: 35px;
 }
 
 input#search-bar{
@@ -241,3 +255,67 @@ input#search-bar{
 
   background: repeating-linear-gradient(90deg, #ffffff 0%,rgba(255, 255, 255, 0) 100%);
   }
+
+.box26 {
+  position: relative;
+  margin: 0 0 80px 0 ;
+  padding: 0.5em 1em;
+  background-color: #FFF;
+  border: solid 3px #ffffff;
+  border-radius: 3px;
+  color: #000000;
+}
+.box26 .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -27px;
+  left: -3px;
+  padding: 5px;
+  line-height: 1;
+  font-size: 19px;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  font-weight: bold;
+  border-radius: 3px;
+}
+.box26 .box-user {
+  margin: 0; 
+  padding: 0;
+  color: #000000;
+}
+.box26 .box-time {
+  margin: 0; 
+  padding: 0;
+  color: #000000;
+  position: absolute;
+  right: 10px;
+  top: 4px;
+}
+.box26 .box-text {
+  margin: 0; 
+  padding: 0;
+  color: #000000;
+  overflow-wrap: break-word;
+}
+
+
+.box26 .lists{
+  position: absolute;
+  border-style: solid;
+  height: 1px;
+  width: 1px;
+  right: -40px;
+  top:-2px;
+}  
+.lists .list{
+  position: absolute;
+  display: none;
+  background: #000000;
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  right: -20px;
+}
+.lists:hover .list {
+  display: inline-block;
+}

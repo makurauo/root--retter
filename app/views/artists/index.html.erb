@@ -7,11 +7,13 @@
 
 <p class="sample_h_1">検索欄</p>
 <body>
-  <form class="search-container">
-    <%= form_with(url: search_artists_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "作者を検索する", id:"search-bar"  %>
-    <% end %>
-  </form>
+<%= form_tag artists_path, :method => 'get' do %> 
+  <p class="search-container">
+    <%= text_field_tag :search, params[:search],placeholder: "作者を検索する", id:"search-bar" %>
+    <%= submit_tag "", :name => nil , class: "search-btn" %>
+  </p>
+<% end %>
+  
 </body>
 <p>""</p>
 <p>""</p>

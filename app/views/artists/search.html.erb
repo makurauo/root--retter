@@ -1,9 +1,17 @@
-<%= form_with(url: search_artists_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
+<p class="sample_h_1">検索欄</p>
+<body>
+  <form class="search-container">
+    <%= form_with(url: search_artists_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "作者を検索する", id:"search-bar"  %>
+    <% end %>
+  </form>
+</body>
+<p>""</p>
+<p>""</p>
+<p class="sample_h_1">手紙たち</p>
+
 <div class="contents row">
   <% @artists.each do |artist| %>
-    <%= render partial: "artist", locals: { artist: artist } %>
+   <%= render partial: "artist", locals: { artist: artist } %>
   <% end %>
 </div>

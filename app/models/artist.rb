@@ -9,7 +9,7 @@ class Artist < ApplicationRecord
 
   def self.search(search)
     if search != ''
-      Artist.where('name LIKE(?)', "%#{search}%")
+      Artist.where(['name LIKE(?)', "%#{search}%"])
     else
       Artist.all
     end
