@@ -13,6 +13,7 @@
             <li>
              <%= link_to '編集', edit_artist_path(artist.id) %>
            </li>
+           <li>
              <%= link_to '削除', artist_path(artist.id), method: :delete, data: { confirm: '削除しますか？' }%>
            </li>
         <% end %>

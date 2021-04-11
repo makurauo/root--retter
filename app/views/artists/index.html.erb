@@ -1,11 +1,10 @@
-
 <div class="explain">
   <h1 class="explain-look">ーあなたの好きな漫画家にファンレターを書いてみませんか？ー</h1>
   <p  class="explain-text">今までファンレターを書きたいと思ったことはありませんか。 </p>
   <p  class="explain-text">漫画家への思いを書いてみませんか？ コメントしあって気持ちのこもったお手紙を書きましょう。</p>
 </div>
-
-<p class="sample_h_1">検索欄</p>
+<p>""</p>
+<p class="heading_bar">検索欄</p>
 <body>
 <%= form_tag artists_path, :method => 'get' do %> 
   <p class="search-container">
@@ -13,12 +12,9 @@
     <%= submit_tag "", :name => nil , class: "search-btn" %>
   </p>
 <% end %>
-  
 </body>
-<p>""</p>
-<p>""</p>
-<p class="sample_h_1">手紙たち</p>
 
+<p class="heading_bar">手紙たち</p>
 <div class="contents row">
   <% @artists.each do |artist| %>
    <%= render partial: "artist", locals: { artist: artist } %>
