@@ -37,7 +37,6 @@ class ArtistsController < ApplicationController
 
   def show
     @comment = Comment.new
-    # @comments = @artist.comments.includes(:user)
   end
 
   def destroy

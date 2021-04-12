@@ -412,16 +412,34 @@ input#search-bar{
   text-align:center;
 }
 
-
-.comments {
-  padding: 5px;
-  margin-top: 15px;
+.content-show{
+  top: 20px;
+  width: 80%;
+  margin: 0 auto -70px ;
 }
 
-.comments a {
-  color: #57C3E9;
+
+
+.get-comments{
+  margin: 0 auto;
+  text-align:center;
+}
+.get-comment{
+  width: 90%;
+  height: 200px;
+  word-break: break-all;
+}
+.comments{
+	display: block;
+}
+.comments_list{
+  overflow-wrap: break-word;
+  text-align: left;
+}
+.comment_user{
+  border-bottom: solid #FFF 1px;
 }
 
-.comments a:hover {
-  text-decoration: underline;
+.no-artist-memo{
+  font-size: 15px;
 }

@@ -31,19 +31,17 @@
            <% end %>
           </ul>
         </nav>
-          <%#<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     </header>
+  </body>  
     <%= yield %>
   <footer>
     <ul class="footer-menu">
      <li><%= link_to "Home", "/" %></li>
       <% if user_signed_in? %> 
      <li>| <%= link_to "My Page", "/users/#{current_user.id}" %> |</li>
-     <li><%= link_to "Post", new_artist_path, class: "post" %> ｜</li>
-     <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+     <li><%= link_to "Post", new_artist_path, class: "post" %></li>
       <% end %>
     </ul>
     <p>© All rights reserved by root letter.</p>
   </footer>
-  </body>
 </html>

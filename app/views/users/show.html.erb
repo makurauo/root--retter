@@ -15,7 +15,7 @@
    <div class= "search-prof">
     <ul class="list">
       <li>
-      <%= link_to '編集', "#" %>
+      <% link_to '編集', "#"%>
       </li>
       <li>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -26,5 +26,9 @@
 
 <p class="heading_bar"><%= "あなたの投稿" %></p>  
 <div>
+  <% if @artists.length == 0 %>
+  <h3 class = "no-artist-memo"> 投稿してみよう。</h3>
+  <% end %>
    <%= render partial: "artists/artist",  collection: @artists %>
-</div>
+</div>   
+
