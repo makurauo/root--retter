@@ -363,3 +363,65 @@ input#search-bar{
 .search-prof:hover .list {
   display: inline-block;
 }
+
+.box17{
+  position: relative;
+  margin:2em auto;
+  padding: 0.5em 1.5em;
+  border-top: solid 2px rgb(255, 255, 255);
+  border-bottom: solid 2px rgb(255, 255, 255);
+}
+.box17:before, .box17:after{
+  content: '';
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: -webkit-calc(100% + 20px);
+  height: calc(100% + 20px);
+  background-color: rgb(255, 255, 255);
+}
+.box17:before {left: 10px;}
+.box17:after {right: 10px;}
+.box17 p {
+  margin: 0; 
+  padding: 0;
+}
+
+
+.artist-new{
+  text-align:center;
+}
+.artist-label{
+  text-align:center;
+}
+.artist-name{
+  padding-left: 10px;
+  margin: 0 auto;
+  width: 300px;
+  height: 40px;
+  word-break: break-all;
+}
+.artist-ex{
+  width: 100%;
+  height: 200px;
+  word-break: break-all;
+}
+.artist-btn{
+  width: 300px;
+  height: 40px;
+  text-align:center;
+}
+
+
+.comments {
+  padding: 5px;
+  margin-top: 15px;
+}
+
+.comments a {
+  color: #57C3E9;
+}
+
+.comments a:hover {
+  text-decoration: underline;
+}

@@ -1,7 +1,17 @@
- <%= form_with(model: artist, local: true) do |f| %>
-   <%= f.text_field :name, placeholder: "先生の名前" %> <%= "先生" %>
-   <%= f.text_area  :explanation, placeholder: "思いの丈を綴ってください。", rows: "8" %>
-   <%= f.submit "投函する" %>
-  <%=link_to 'もどる', root_path %>
- <% end %>
-                                                      
+ <div class ="artist-new">
+  <%= form_with(model: artist, local: true) do |f| %>
+    <br> <%= f.label :"筆者名" , class:"artist-label"%> <br> 
+    <br> <span></span><br> 
+    <%= f.text_field :name, class:"artist-name", placeholder: "先生の名前" %> <span> 先生 </span>
+    <br> <span></span><br> 
+    <br> <%= f.label :"説明", class:"artist-label" %> <br> 
+
+    <div class="box17"> 
+    <p><%= f.text_area  :explanation, class:"artist-ex",placeholder: "思いの丈を綴ってください。" %></p>
+    </div>
+
+  <br> <%= f.submit "投函", class:"artist-btn" %> <br> 
+  <br> <%=link_to 'もどる', root_path ,class:"artist-btn" %> <br> 
+  <br> <span></span><br> 
+  <% end %>
+</div>
