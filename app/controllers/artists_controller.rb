@@ -3,8 +3,6 @@ class ArtistsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @artists = Artist.includes(:artist).order('created_at DESC')
-    @user = User.order('created_at DESC')
     @artists = Artist.all
     @artists = Artist.includes(:user)
     @artists = Artist.search(params[:search])
