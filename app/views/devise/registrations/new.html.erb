@@ -1,45 +1,41 @@
-<div class="contents row">
-  <div class="container">
-    <h2>Sign up</h2>
-    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+<p class="heading_bar"><%= "新規登録" %></p>
+    <%= form_with model: @user, url: user_registration_path, class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :nick_name %><br />
-        <%= f.text_field :nick_name, autofocus: true %>
+        <%= f.label :nick_name, class: 'new_user_text' %><br />
+        <%= f.text_field :nick_name, autofocus: true, class: 'new_user_box',:placeholder => "20文字以内でお願いします" %>
       </div>
 
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email %>
+        <%= f.label :email, class: 'new_user_text' %><br />
+        <%= f.email_field :email, class: 'new_user_box' %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
+        <%= f.label :password, class: 'new_user_text' %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em class='new_user_text'>-<%= @minimum_password_length %> 文字以上の半角英数混合でお願いします-</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off", class: 'new_user_box' %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.label :password_confirmation, class: 'new_user_text' %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'new_user_box' %>
       </div>
 
        <div class="field">
-        <%= f.label :genre_id %><br />
-         <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"manga-genle"}) %>
+        <%= f.label :genre_id, class: 'new_user_text' %><em class='new_user_text'>-好きなジャンルを！-</em><br />
+         <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"new-select-box", id:"manga-genle"}) %>
       </div>
 
       <div class="field">
-        <%= f.label :profile %><br />
-        <%= f.text_field :profile %>
+        <%= f.label :profile, class: 'new_user_text' %><em class='new_user_text'>-自由に自己紹介を！-</em><br />
+        <%= f.text_area :profile, class:'my-text', :placeholder => "こんにちは！漫画は月に２０冊ほど読みます。〇〇先生が好きです。"%>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "登録！", class: 'new_user_submit' %>
       </div>
     <% end %>
-  </div>
-</div>

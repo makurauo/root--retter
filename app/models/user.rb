@@ -11,7 +11,7 @@ class User < ApplicationRecord
   belongs_to :genre
 
   with_options presence: true do
-    validates :nick_name
+    validates :nick_name, length: {maximum: 20 }
     validates :genre_id, numericality: { other_than: 1 }
   end
 end

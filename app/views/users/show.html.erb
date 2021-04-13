@@ -1,16 +1,13 @@
 <p class="heading_bar"><%= "プロフィール" %></p>
 <ul class = "your_names">
- <li class = "your_name">Nick_name:
-  <span class="under"><%= @user.nick_name %></span>
- </li>
+ <li class = "your_name">Nick_name:</li> 
+ <li><span class="under"><%= @user.nick_name %></span> </li>
   <% if @user.profile != nil %>
-    <li class = "your_name">Profile:
-    <span class="under"><%= @user.profile %></span>
-    </li> 
+   <li class = "your_name">Profile:</li> 
+   <li><span class="under"><%= @user.profile %></span></li> 
   <% end %>
- <li class = "your_name">Like_genre:
-  <span class="under"><%= @user.genre.name %></span>
- </li>
+  <li class = "your_name">Like_genre:</li> 
+  <li><span class="under"><%= @user.genre.name %></span></li>
  
    <div class= "search-prof">
     <ul class="list">

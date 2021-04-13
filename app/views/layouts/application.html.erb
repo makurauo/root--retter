@@ -19,15 +19,17 @@
         <a class="tittle">-Root Letter-</a>
       </h1>
         <nav>
-          <ul>
-            <li class=”current”><a href="/" >Home</a></li>
-            <li></li>
+          <ul class = "header-sub">
+            <li><a href="/" >Home</a></li>
            <% if user_signed_in? %> 
-            <li> <%= link_to current_user.nick_name, "/users/#{current_user.id}" %></li>
-            <li> <%= link_to "投稿する", new_artist_path, class: "post" %></li>
+            <li></li>
+            <li> <%= link_to "Mypage", "/users/#{current_user.id}",class:'sub_menu' %></li>
+            <li></li>
+            <li> <%= link_to "投稿する", new_artist_path, class: "post",class:'sub_menu' %></li>
            <% else %> 
-            <li><%= link_to "ログイン", new_user_session_path, class: "post" %></li>
-            <li><%= link_to "新規登録", new_user_registration_path, class: "post" %></li>
+            <li></li>
+            <li><%= link_to "ログイン", new_user_session_path, class: "post",class:'ub_menu' %></li>
+            <li><%= link_to "新規登録", new_user_registration_path, class: "post",class:'sub_menu' %></li>
            <% end %>
           </ul>
         </nav>

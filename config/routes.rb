@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   resources :users, only: :show
+  get 'users' => 'users#dummy'
 end

@@ -140,6 +140,9 @@ body {
     padding: 14px;
     background: rgb(0, 0, 0);
   }
+.field_with_errors{
+  display: contents
+}
 
 header {
   width: 100%;
@@ -149,7 +152,6 @@ header {
   background-image: url("header.jpg");
   background-position: center center;
   background-size: cover;
-  margin: 0;
   }
   header .tittle {
   font-family: 'Caveat', cursive;
@@ -157,8 +159,18 @@ header {
   color: #ffffff;
   font-size: 50px;
   display: flex;
-  display: left;
   }
+  header .header-sub{
+    letter-spacing : 5px;  
+    color: #ffffff;
+    font-size: 15px;
+    display: flex;
+    
+
+  }
+  header .header_sub_menu .sub_menu{
+    margin:10px;
+  } 
 
 nav{
   text-align: center;
@@ -326,17 +338,36 @@ input#search-bar{
   font-family:'Hiragino Mincho ProN';
   margin: -20px 0 20px 40px;
 	padding: 10px;
-	width: 460px;
+  width: 90%;
 	text-align: left;
   color: #FFF;
+  word-break: break-word;
+  background-color: black;
 }
-.your_names li{
+.your_name {
     font-size: 15px;
     text-align: left;
+    border-bottom:solid #FFF 1px;
+    margin: 5px 0;
   }
+
+
+  .heading_bar{
+    font-family: 'Caveat', cursive;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    font-weight: bold; 
+    padding-top: .5em;
+    padding-left: 10px;
+    padding-bottom: .5em;
+    margin-bottom: 2em;
+    margin-top: 10px;
+    background: repeating-linear-gradient(90deg, #ffffff 0%,rgba(255, 255, 255, 0) 100%);
+    }
+
   .your_name .under{
-    border-bottom:solid 1px #ffffff;
     font-size:15px;
+    word-break: break-word;
   }
 
   .your_names  .search-prof{
@@ -439,7 +470,42 @@ input#search-bar{
 .comment_user{
   border-bottom: solid #FFF 1px;
 }
-
 .no-artist-memo{
   font-size: 15px;
+}
+
+
+.new_user{
+  text-align:center;
+  text-align: left;
+}
+.new_user_text{
+  left: 10px;
+  font-family:'Hiragino Mincho ProN';
+}
+.new_user_box{
+  width: 60%;
+}
+.my-text{
+  width: 80%;
+  height: 100px;
+  word-break: break-word;
+}
+.new-select-box{
+  width: 60%;
+}
+.new_user_submit{
+  display: inline-block;
+    width: 50%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #FFF;
+    color: black;
+    font-weight: bold;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    border: 2px solid transparent;
 }
