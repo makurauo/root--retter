@@ -5,7 +5,7 @@ class Artist < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
 
   with_options presence: true do
-    validates :name
+    validates :name, length: {maximum: 20 }
     validates :explanation
   end
 

@@ -257,10 +257,9 @@ input#search-bar{
 }
 
 .heading_bar{
-  font-family: 'Caveat', cursive;
+  font-family:'Hiragino Mincho ProN';
   font-size: 1em;
   color: rgb(0, 0, 0);
-  font-weight: bold; 
   padding-top: .5em;
   padding-left: 10px;
   padding-bottom: .5em;

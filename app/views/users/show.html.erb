@@ -15,7 +15,7 @@
       <% link_to '編集', "#"%>
       </li>
       <li>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか？' }%>
       </li>
    </ul>
    </div>
