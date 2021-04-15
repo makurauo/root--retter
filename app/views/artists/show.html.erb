@@ -7,10 +7,10 @@
   <% if user_signed_in? %>
     <%= form_with(model: [@artist, @comment], local: true) do |form| %>
     <%= form.text_area :text, placeholder: "コメントする", class:"get-comment"%>
-   <br> <%= form.submit "SEND" ,class:"artist-btn"%><br>
-  <% end %>  
+    <br> <%= form.submit "SEND" ,class:"artist-btn"%><br>
+    <% end %>
   <% else %>
-    <p>※ コメントの投稿には新規登録/ログインが必要です。 </p>
+    <p>※ コメントの投稿には新規登録/ログインが必要です！ </p>
   <% end %>
    <div class="comments">
     <ul class="comments_lists">

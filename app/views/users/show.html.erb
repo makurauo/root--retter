@@ -2,7 +2,7 @@
 <ul class = "your_names">
  <li class = "your_name">Nick_name:</li> 
  <li><span class="under"><%= @user.nick_name %></span> </li>
-  <% if @user.profile != nil %>
+  <% if @user.profile.length != 0 %>
    <li class = "your_name">Profile:</li> 
    <li><span class="under"><%= @user.profile %></span></li> 
   <% end %>

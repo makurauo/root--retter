@@ -455,8 +455,8 @@ input#search-bar{
   text-align:center;
 }
 .get-comment{
-  width: 90%;
-  height: 200px;
+  width: 70%;
+  height: 100px;
   word-break: break-all;
 }
 .comments{
