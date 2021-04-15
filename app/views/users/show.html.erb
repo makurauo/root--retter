@@ -1,29 +1,31 @@
- <h2 class="page-heading">
-        <%= @user.nick_name%>
-      </h2>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th class="table__col1">名前</th>
-            <td class="table__col2"><%= @user.nick_name %></td>
-          </tr>
-          <tr>
-          <% if @user.profile != nil %>
-           <% puts %>
-            <th class="table__col1">プロフィール</th>
-            <td class="table__col2"><%= @user.profile %></td>  
-           <% end %>
-          </tr>
-          <tr>
-            <th class="table__col1">好きなジャンル</th>
-            <td class="table__col2"><%= @user.genre.name %></td>
-          </tr>
-        </tbody>
-      </table>
-      <h2 class="page-heading">
-        <%= "#{@user.nick_name}さんの投稿"%>
-      </h2>
-      <div class="user__card">
-       <%= render partial: "artists/artist",  collection: @artists %>
-      </div>
-    </div>
+<p class="heading_bar"><%= "プロフィール" %></p>
+<ul class = "your_names">
+ <li class = "your_name">Nick_name:</li> 
+ <li><span class="under"><%= @user.nick_name %></span> </li>
+  <% if @user.profile != nil %>
+   <li class = "your_name">Profile:</li> 
+   <li><span class="under"><%= @user.profile %></span></li> 
+  <% end %>
+  <li class = "your_name">Like_genre:</li> 
+  <li><span class="under"><%= @user.genre.name %></span></li>
+ 
+   <div class= "search-prof">
+    <ul class="list">
+      <li>
+      <% link_to '編集', "#"%>
+      </li>
+      <li>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか？' }%>
+      </li>
+   </ul>
+   </div>
+</ul>
+
+<p class="heading_bar"><%= "あなたの投稿" %></p>  
+<div>
+  <% if @artists.length == 0 %>
+  <h3 class = "no-artist-memo"> 投稿してみよう。</h3>
+  <% end %>
+   <%= render partial: "artists/artist",  collection: @artists %>
+</div>   
+

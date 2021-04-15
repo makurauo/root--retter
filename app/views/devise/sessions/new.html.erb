@@ -1,31 +1,22 @@
-<div class="contents row">
-  <div class="container">
-    <h2>Log in</h2>
+<p class="heading_bar"><%= "ログイン" %></p>
     <div class='login-flash-message'>
       <%= flash[:notice] %>
       <%= flash[:alert] %>
     </div>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.label :email, class: 'new_user_text' %><br />
+        <%= f.email_field :email, class:'new_user_box', autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.label :password, class: 'new_user_text' %><br />
+        <%= f.password_field :password, class:'new_user_box', autocomplete: "off" %>
       </div>
 
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.label :remember_me %><br />
-          <%= f.check_box :remember_me %>
-        </div>
-      <% end -%>
-
-      <div class="actions">
-        <%= f.submit "Log in" %>
-      </div>
+    <div class="actions">
+        <%= f.submit "ログイン!", class:'new_user_submit'%>
+     </div>
     <% end %>
   </div>
 </div>

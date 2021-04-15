@@ -1,47 +1,29 @@
-<div class="contents row">
-   <div class="content_post" style="background-image: 'kuro.jpg';">
-     <% if user_signed_in? && current_user.id == @artist.user_id %>
-       <div class="more">
-         <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
-           <li>
-             <%= link_to '編集', edit_artist_path(@artist.id) %>
-             <%= link_to '削除', artist_path(@artist.id), method: :delete, data: { confirm: '削除しますか？' }%>
-           </li>
-        </ul>
-      </div>    
-   <% end %>
-     <span class="name">
-       <%= @artist.name %><%= "先生" %>
-         <span class="name">
-      <a href="/users/<%= @artist.user.id %>">
-        <span>投稿者</span><%= @artist.user.nick_name %>
-      </a>
-    </span>
-    </span>
-    <p><%= @artist.explanation %></p>
-  </div>
-   <div class="container">
-    <% if user_signed_in? %>
-      <%= form_with(model: [@artist, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "4" %>
-        <%= form.submit "SEND" %>
-      <% end %>
-    <% else %>
-      <strong><p>※ コメントの投稿には新規登録/ログインが必要です </p></strong>
-    <% end %>
-       <ul class="comments_lists">
-        <div class="comments">
-          <h4>＜コメント一覧＞</h4>
-           <% @artist.comments.each do |comment| %>
-             <li class="comments_list">
-                <div><%= comment.created_at.to_s(:datetime_jp) %></div>
-                <strong><%= link_to comment.user.nick_name, user_path(comment.user.id), class: :comment_user %> <strong>
-                <%= comment.text %>
-            </li>
-          <% end %>  
-        </div>
-       </ul>
-    </div>
-  </div>   
+<p class="heading_bar">手紙</p>
+<div class="content-show">
+   <%= render partial: "artist", locals: { artist: @artist } %>
+</div>
+<p class="heading_bar">コメント欄</p>
+<div class ="get-comments">   
+  <% if user_signed_in? %>
+    <%= form_with(model: [@artist, @comment], local: true) do |form| %>
+    <%= form.text_area :text, placeholder: "コメントする", class:"get-comment"%>
+   <br> <%= form.submit "SEND" ,class:"artist-btn"%><br>
+  <% end %>  
+  <% else %>
+    <p>※ コメントの投稿には新規登録/ログインが必要です。 </p>
+  <% end %>
+   <div class="comments">
+    <ul class="comments_lists">
+     <% if user_signed_in? %>  
+      <h4>＜コメント一覧＞</h4>
+     <% end %>
+      <% @artist.comments.each do |comment| %>
+     <li class="comments_list">
+      <%= comment.created_at.to_s(:datetime_jp) %>
+      <%= link_to comment.user.nick_name, user_path(comment.user.id), class: :comment_user %>
+      <br><%= comment.text %><br>
+      <% end %> 
+     </li>
+    </ul>
+   </div> 
 </div>

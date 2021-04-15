@@ -1,12 +1,11 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: [:edit, :update, :show, :destroy]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
-    @artists = Artist.includes(:artist).order('created_at DESC')
-    @user = User.order('created_at DESC')
     @artists = Artist.all
     @artists = Artist.includes(:user)
+    @artists = Artist.search(params[:search])
   end
 
   def new
@@ -36,11 +35,6 @@ class ArtistsController < ApplicationController
 
   def show
     @comment = Comment.new
-    # @comments = @artist.comments.includes(:user)
-  end
-
-  def search
-    @artists = Artist.search(params[:keyword])
   end
 
   def destroy

@@ -1,9 +1,7 @@
-<div class="contents row">
-  <div class="container">
+
   <%= form_with(model: @artist, local: true) do |form| %>
-    <h3>投稿する</h3>
+<p class="heading_bar">投稿する</p>
     <%= render 'layouts/error_messages', model: form.object %>
     <%= render partial: "form", locals: { artist: @artist } %>
   <% end %>
-  </div>
-</div>
+

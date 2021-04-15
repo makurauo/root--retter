@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RootLetter</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <head>
+   <meta charset="UTF-8">
+    <link rel="stylesheet" href="example.css">
+      <title>RootLetter</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">RootLetter</a></h1>
-         <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-           <span><%= current_user.nick_name %>
-            <ul class="user__info">
-              <li>
-                <%= link_to "マイページ", "/users/#{current_user.id}" %>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-              </li>
-            </ul>
-           </span> 
-            <%= link_to "投稿する", new_artist_path, class: "post" %>
-          </div>
-        <% else %>
-          <div class="grid-6">
-            <%= link_to "ログイン", new_user_session_path, class: "post" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-          </div>
-        <% end %>
-      </div>
+    <header>
+      <h1 class="headline">
+        <a class="tittle">-Root Letter-</a>
+      </h1>
+        <nav>
+          <ul class = "header-sub">
+            <li><a href="/" >Home</a></li>
+           <% if user_signed_in? %> 
+            <li></li>
+            <li> <%= link_to "Mypage", "/users/#{current_user.id}",class:'sub_menu' %></li>
+            <li></li>
+            <li> <%= link_to "投稿する", new_artist_path, class: "post",class:'sub_menu' %></li>
+           <% else %> 
+            <li></li>
+            <li><%= link_to "ログイン", new_user_session_path, class: "post",class:'ub_menu' %></li>
+            <li><%= link_to "新規登録", new_user_registration_path, class: "post",class:'sub_menu' %></li>
+           <% end %>
+          </ul>
+        </nav>
     </header>
+  </body>  
     <%= yield %>
-     <footer>
-      <p>
-        Copyright RootLetter 2021.
-      </p>
-    </footer>
-  </body>
+  <footer>
+    <ul class="footer-menu">
+     <li><%= link_to "Home", "/" %></li>
+      <% if user_signed_in? %> 
+     <li>| <%= link_to "My Page", "/users/#{current_user.id}" %> |</li>
+     <li><%= link_to "Post", new_artist_path, class: "post" %></li>
+      <% end %>
+    </ul>
+    <p>© All rights reserved by root letter.</p>
+  </footer>
 </html>

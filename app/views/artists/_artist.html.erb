@@ -1,7 +1,11 @@
-<div class="content_post" >
-       <div class="more">
-         <span><%= image_tag 'arrow_top.png' %></span>
-        <ul class="more_list">
+<div class="box26">
+    <span class="box-title"><%= artist.name %><%= " 先生" %></span>
+    <a class="box-user", href="/users/<%= artist.user.id %>" ><p>投稿者：<%= artist.user.nick_name %> </a>
+    <p class="box-time"><%= artist.created_at.to_s(:datetime_jp) %></p>
+    <p class="box-text"><%= artist.explanation %></p>
+
+      <div class="lists">
+        <ul class="list">
            <li>
              <%= link_to '詳細', artist_path(artist.id) %>
            </li>
@@ -9,16 +13,10 @@
             <li>
              <%= link_to '編集', edit_artist_path(artist.id) %>
            </li>
+           <li>
              <%= link_to '削除', artist_path(artist.id), method: :delete, data: { confirm: '削除しますか？' }%>
            </li>
         <% end %>
         </ul>
-   </div>
-    <div><%= artist.created_at.to_s(:datetime_jp) %></div>
-     <span class="name">
-       <%= artist.name %><%= "先生" %>
-         <a href="/users/<%= artist.user.id %>">
-          <span>投稿者</span><%= artist.user.nick_name %>
-        </a>
-    </span>
-    <p><%= artist.explanation %></p>
+      </div>
+ </div>     
