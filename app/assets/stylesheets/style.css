@@ -131,6 +131,7 @@ body {
 }
 
  body {background-image: url("fodder.jpg");
+       background-color: #000;
        background-size:  auto;} 
 
   div{
@@ -151,6 +152,7 @@ header {
   text-align: center;
   background-image: url("header.jpg");
   background-position: center center;
+  background-color: #000;
   background-size: cover;
   }
   header .tittle {
