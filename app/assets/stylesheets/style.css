@@ -130,7 +130,7 @@ body {
                'ヒラギノ角ゴシック',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic'
 }
 
- body {background-image: url("fodder.jpg");
+ body {background-image: url(https://i.gyazo.com/cf7120d72457a304a6112b372410d150.jpg);
        background-color: #000;
        background-size:  auto;} 
 
@@ -150,7 +150,7 @@ header {
   height: 200px;
   padding: 5px 0;
   text-align: center;
-  background-image: url("header.jpg");
+  background-image: url(https://i.gyazo.com/44ba3d18c0c4ffa6e1efdf78274ed0e7.jpg);
   background-position: center center;
   background-color: #000;
   background-size: cover;
@@ -159,7 +159,7 @@ header {
   font-family: 'Caveat', cursive;
   letter-spacing : 10px;  
   color: #ffffff;
-  font-size: 50px;
+  font-size: 90px;
   display: flex;
   }
   header .header-sub{
